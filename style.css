@@ -9,8 +9,9 @@
 }
 
 .menu {
-	flex-grow: 0.08;
-	min-height: 50px;
+	flex-grow: 0;
+	min-height: 8%;
+	height: 8%;
 
 	display: flex;
 	flex-direction: row;
@@ -35,11 +36,142 @@
 }
 
 .page-content {
-	flex-grow: 0.92;
+	flex-grow: 1;
+	padding-left: 1em;
+	padding-right: 1em;
+
+	overflow-y: scroll;
 }
 
 html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+}
+
+#gallery-grid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: top;
+	justify-content: space-between;
+	column-gap: 1em;
+	row-gap: 1em;
+	width: 75%;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.gallery-item {
+	aspect-ratio: 16 / 9;
+	object-fit: contain;
+
+	width: clamp(200px, 30%, 600px);
+	padding: 0.25em;
+
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+	transform: scale(1.05);
+}
+
+.gallery-ghost {
+	width: clamp(200px, 30%, 600px);
+	aspect-ratio: 16 / 9;
+	padding: 0.25em;
+
+	visibility: hidden;
+}
+
+/* Közepes kijelző: max 2 oszlop */
+@media (max-width: 900px) {
+	.gallery-item {
+		width: 45%;
+	}
+}
+
+/* Mobil: mindig 1 oszlop */
+@media (max-width: 600px) {
+	.gallery-item {
+		width: 100%;
+	}
+}
+
+#lightbox {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.85);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+#lightbox-image {
+	max-width: 90vw;
+	max-height: 90vh;
+	box-shadow: 0 0 25px rgba(0,0,0,0.7);
+	border-radius: 4px;
+	object-fit: contain;
+	cursor: zoom-out;
+}
+
+.image-and-text {
+	display: flex;
+	flex-direction: row;
+
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.image-and-text > div > img {
+	max-height: 400px;
+}
+
+.image-and-text > div {
+	width: 30%;
+}
+
+.image-and-text > span {
+	display: block;
+	text-align: justify;
+	width: 70%;
+	font-size: x-large;
+}
+
+div.yt-embed {
+	text-align: center;
+}
+
+div.yt-embed:not(:last-of-type) {
+	margin-bottom: 1em;
+}
+
+iframe {
+	width: 60%;
+	aspect-ratio: 16 / 9;
+}
+
+#page-logo {
+	margin-left: 2em;
+	margin-right: auto;
+
+	font-size: xx-large;
+	font-weight: bold;
+}
+
+.page-title {
+	margin-left: 12.5%;
+}
+
+#about {
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	font-size: x-large;
+	text-align: justify;
 }
