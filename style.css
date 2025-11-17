@@ -18,6 +18,8 @@
 	justify-content: flex-end;
 	align-items: center;
 
+	position: sticky;
+
 	background-color: burlywood;
 }
 
@@ -33,6 +35,62 @@
 
 .menu-item:hover {
 	color: #800000;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5em;
+    margin-left: 1em;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+}
+
+/* Menüelemek konténere */
+.menu-items {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ----- MOBIL ----- */
+@media (max-width: 600px) {
+
+    /* Asztali menüpontok eltűnnek */
+    .menu-items {
+        display: none; /* alapból rejtett */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;     /* a menü csík alatt jelenik meg */
+        right: 0;
+        background-color: burlywood;
+        width: 70%;
+        padding: 1em;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 999;
+    }
+
+    /* Mutatott állapot */
+    .menu-items.open {
+        display: flex;
+    }
+
+    /* Hamburger ikon mobilon jelenik meg */
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+
+    /* Menübody (mobil) */
+    .menu-item {
+        margin: 1em 0;
+        font-size: x-large;
+    }
 }
 
 .page-content {

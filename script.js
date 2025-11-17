@@ -1,9 +1,17 @@
 $(document).ready(() =>
 {
-	$("div.menu").load("menu.html", () => $("[main-page]").click());
+	$("div.menu").load("menu.html", () => {
+		$("[main-page]").click()
+
+		$(".hamburger").on("click", function() {
+			$(".menu-items").toggleClass("open");
+		});
+	});
 });
 
 $(document).on("click", ".menu-item", function() {
+	$(".menu-items").removeClass("open");
+
 	let contentFileProp = $(this).data("content-file");
 	let contentFileName = "page-content/" + contentFileProp + ".html";
 	let title = $(this).text();
