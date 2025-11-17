@@ -40,6 +40,8 @@
 	padding-left: 1em;
 	padding-right: 1em;
 
+	background-color: rgba(222, 184, 135, 0.25);
+
 	overflow-y: scroll;
 }
 
