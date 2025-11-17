@@ -177,3 +177,43 @@ iframe {
 	font-size: x-large;
 	text-align: justify;
 }
+
+.middle-container {
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.right {
+	float: right;
+}
+
+.figure-box {
+	max-height: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: fit-content; 
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.figure-box > img {
+	max-height: calc(400px - 2.5em);
+	height: auto;
+	width: auto;
+
+	max-width: 100%;
+	object-fit: contain;
+
+	display: block;
+}
+
+.figure-box > span {
+	text-align: center;
+	padding-top: 0.5em;
+	font-size: 1rem;
+	line-height: 1.2;
+	max-width: 100%;
+}
