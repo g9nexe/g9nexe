@@ -39,6 +39,7 @@
 	flex-grow: 1;
 	padding-left: 1em;
 	padding-right: 1em;
+	padding-bottom: 16vh;
 
 	background-color: rgba(222, 184, 135, 0.25);
 
@@ -216,4 +217,14 @@ iframe {
 	font-size: 1rem;
 	line-height: 1.2;
 	max-width: 100%;
+}
+
+.link-list > a {
+	font-size: x-large;
+	display: block;
+	width: fit-content;
+}
+
+.link-list > a:not(:last-of-type) {
+	margin-bottom: 0.5em;
 }
