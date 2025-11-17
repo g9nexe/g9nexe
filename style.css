@@ -228,3 +228,8 @@ iframe {
 .link-list > a:not(:last-of-type) {
 	margin-bottom: 0.5em;
 }
+
+#page-logo > a {
+	color: inherit;
+	text-decoration: none;
+}
